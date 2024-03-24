@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    jenkins:
+        image: jenkins/jenkins:lts
+        ports:
+            - 8080:8080
+            - 50000:50000
+        volumes:
+            - jenkins_home:/var/jenkins_home
+    sonarqube:
+        image: sonarqube:9.9.0-community
+        ports:
+            - 9000:9000
+volumes:
+    jenkins_home:
